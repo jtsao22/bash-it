@@ -13,8 +13,15 @@ function prompt_command() {
 
     if [ "$(whoami)" = root ]; then no_color=$red; else no_color=$white; fi
 
-    PS1="${no_color}\u${reset_color}:${blue}\W/${reset_color} \[\$(scm_prompt_info)\]$ "
+    debian_chroot=$(cat /etc/debian_chroot 2> /dev/null)
+    if [ "zircon-dev" = "$debian_chroot" ]; then
+        PS1="($debian_chroot) ${no_color}\u${reset_color}:${blue}\w/${reset_color} \[\$(scm_prompt_info)\]$ "
+    else
+        PS1="${no_color}\u${reset_color}:${blue}\w/${reset_color} \[\$(scm_prompt_info)\]$ "
+    fi
+
     RPROMPT='[\t]'
+
 }
 
 PROMPT_COMMAND=prompt_command;

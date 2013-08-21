@@ -30,10 +30,6 @@ alias pager="$PAGER"
 
 alias q='exit'
 
-alias irc="$IRC_CLIENT"
-
-alias rb='ruby'
-
 # Pianobar can be found here: http://github.com/PromyLOPh/pianobar/
 
 alias piano='pianobar'
@@ -55,3 +51,27 @@ fi
 # Directory
 alias	md='mkdir -p'
 alias	rd='rmdir'
+
+# Open programs like the mac
+alias open="xdg-open $1"
+
+# Cd and ls at the same time
+function cs() {
+    cd "$1"
+    ls
+}
+
+# Better cp that includes pv for showing progress bar
+function pvcp()
+{
+    SOURCE=$1
+
+    if [ -d $2 ]
+    then
+        DESTINATION=$2/`basename $SOURCE`
+    else
+        DESTINATION=$2
+    fi
+
+    pv ${SOURCE} | > ${DESTINATION}
+}
