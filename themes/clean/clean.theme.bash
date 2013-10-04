@@ -15,9 +15,9 @@ function prompt_command() {
 
     debian_chroot=$(cat /etc/debian_chroot 2> /dev/null)
     if [ "zircon-dev" = "$debian_chroot" ]; then
-        PS1="($debian_chroot) ${no_color}\u${reset_color}:${blue}\w/${reset_color} \[\$(scm_prompt_info)\]$ "
+        PS1="\[($debian_chroot)\] ${no_color}\u${reset_color}:${blue}\w/${reset_color} \$(scm_prompt_info)$ "
     else
-        PS1="${no_color}\u${reset_color}:${blue}\w/${reset_color} \[\$(scm_prompt_info)\]$ "
+        PS1="${no_color}\u${reset_color}:${blue}\w/${reset_color} \$(scm_prompt_info)$ "
     fi
 
     RPROMPT='[\t]'

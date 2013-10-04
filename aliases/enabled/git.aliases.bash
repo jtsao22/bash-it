@@ -1,0 +1,11 @@
+# Git Aliases
+alias grm='git rm $@'
+alias ga='git add $@'
+alias gc='git commit -m $@'
+alias gco='git checkout $@'
+alias gs='git status'
+alias gpl='git pull $@'
+alias gps='git push $@'
+alias gd='git diff $@'
+alias gl='git log --pretty=oneline --abbrev-commit --color --max-count=50'
+alias gb='git branch'

@@ -53,7 +53,10 @@ alias	md='mkdir -p'
 alias	rd='rmdir'
 
 # Open programs like the mac
-alias open="xdg-open $1"
+alias open="xdg-open"
+
+# Always grep recursively all files 
+alias grep='grep -r'
 
 # Cd and ls at the same time
 function cs() {
