@@ -1,1 +1,0 @@
-/home/jtsao22/.bash_it/completion/available/ssh.completion.bash
