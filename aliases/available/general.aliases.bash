@@ -56,7 +56,7 @@ alias	rd='rmdir'
 alias open="xdg-open"
 
 # Always grep recursively all files 
-alias grep='grep -r'
+#alias grep='grep -r'
 
 # Cd and ls at the same time
 function cs() {
