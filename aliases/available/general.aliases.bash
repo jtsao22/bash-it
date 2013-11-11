@@ -64,6 +64,12 @@ function cs() {
     ls
 }
 
+# cd into the file's directory
+function cdd() {
+    dir_name=`dirname $1`
+    cd $dir_name
+}
+
 # Better cp that includes pv for showing progress bar
 function pvcp()
 {
@@ -78,3 +84,6 @@ function pvcp()
 
     pv ${SOURCE} | > ${DESTINATION}
 }
+
+# Alias ack-grep to ack
+alias ack='ack-grep'
