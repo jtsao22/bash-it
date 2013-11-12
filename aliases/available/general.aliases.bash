@@ -56,18 +56,12 @@ alias	rd='rmdir'
 alias open="xdg-open"
 
 # Always grep recursively all files 
-#alias grep='grep -r'
+alias grep='grep -r'
 
 # Cd and ls at the same time
 function cs() {
     cd "$1"
     ls
-}
-
-# cd into the file's directory
-function cdd() {
-    dir_name=`dirname $1`
-    cd $dir_name
 }
 
 # Better cp that includes pv for showing progress bar
@@ -85,11 +79,8 @@ function pvcp()
     pv ${SOURCE} | > ${DESTINATION}
 }
 
-# Alias ack-grep to ack
-alias ack='ack-grep'
-
-# tar a directory
-function tarify() {
+# Tar a directory
+function tarify()
+{
     tar -zcvf $1.tar.gz $1
 }
-
