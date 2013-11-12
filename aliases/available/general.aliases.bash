@@ -87,3 +87,9 @@ function pvcp()
 
 # Alias ack-grep to ack
 alias ack='ack-grep'
+
+# tar a directory
+function tarify() {
+    tar -zcvf $1.tar.gz $1
+}
+
