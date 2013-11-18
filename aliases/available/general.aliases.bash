@@ -58,6 +58,9 @@ alias open="xdg-open"
 # Always grep recursively all files 
 alias grep='grep -r'
 
+# ack = ack-grep 
+alias ack='ack-grep'
+
 # Cd and ls at the same time
 function cs() {
     cd "$1"
