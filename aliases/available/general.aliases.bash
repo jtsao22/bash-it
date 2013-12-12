@@ -9,6 +9,9 @@ alias ll='ls -al'
 alias l='ls -a'
 alias l1='ls -1'
 
+# Source bashrc
+alias ba="source ~/.bashrc"
+
 alias _="sudo"
 
 if [ $(uname) = "Linux" ]
@@ -87,3 +90,4 @@ function tarify()
 {
     tar -zcvf $1.tar.gz $1
 }
+
