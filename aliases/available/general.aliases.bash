@@ -9,6 +9,9 @@ alias ll='ls -al'
 alias l='ls -a'
 alias l1='ls -1'
 
+# Alias python with p
+alias p="python"
+
 # Source bashrc
 alias ba="source ~/.bashrc"
 
