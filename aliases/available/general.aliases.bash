@@ -94,3 +94,6 @@ function tarify()
     tar -zcvf $1.tar.gz $1
 }
 
+# Easy full path printer
+alias ep="readlink -f $1"
+
