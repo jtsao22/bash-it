@@ -10,7 +10,7 @@ alias l='ls -a'
 alias l1='ls -1'
 
 # Alias python with p
-alias p="python"
+alias p="ipython"
 
 # Source bashrc
 alias ba="source ~/.bashrc"
@@ -97,3 +97,5 @@ function tarify()
 # Easy full path printer
 alias ep="readlink -f $1"
 
+# Use temp directory
+alias tmp="cd `mktemp -d`"
