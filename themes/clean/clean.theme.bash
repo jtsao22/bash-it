@@ -17,7 +17,7 @@ function prompt_command() {
     if [ "zircon-dev" = "$debian_chroot" ]; then
         PS1="\[($debian_chroot)\] ${no_color}\u${reset_color}:${blue}\w/${reset_color} \$(scm_prompt_info)$ "
     else
-        PS1="--------------------------------------------------------------------------------------\n${no_color}\u${reset_color}:${blue}\w/${reset_color} \$(scm_prompt_info)$ "
+        PS1="$(separator)$(time_prompt)\n${no_color}\u${reset_color}:${blue}\w/${reset_color} \$(scm_prompt_info)$ "
     fi
 
     RPROMPT='[\t]'

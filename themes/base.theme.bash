@@ -167,3 +167,11 @@ function scm_char {
 function prompt_char {
     scm_char
 }
+
+function separator {
+    echo "--------------------------------------------------------------------------------------"
+}
+
+function time_prompt {
+    echo -e "[$(date +%H:%M:%S)]"
+}
