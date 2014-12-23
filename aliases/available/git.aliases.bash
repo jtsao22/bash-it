@@ -28,7 +28,8 @@ alias gco='git checkout'
 alias gexport='git archive --format zip --output'
 alias gdel='git branch -D'
 alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
-alias gl='git log --pretty=oneline --abbrev-commit --color --max-count=50'
+#alias gl='git log --pretty=oneline --abbrev-commit --color --max-count=50'
+alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --graph"
 alias gll='git log --graph --pretty=oneline --abbrev-commit'
 alias gg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias ggs="gg --stat"
@@ -38,6 +39,7 @@ alias gt="git tag"
 alias gta="git tag -a"
 alias gtd="git tag -d"
 alias gtl="git tag -l"
+alias gd='git diff'
 
 case $OSTYPE in
   darwin*)
@@ -47,19 +49,3 @@ case $OSTYPE in
     alias gtls='git tag -l | sort -V'
     ;;
 esac
-
-if [ -z "$EDITOR" ]; then
-    case $OSTYPE in
-      linux*)
-        alias gd='git diff | vim -R -'
-        ;;
-      darwin*)
-        alias gd='git diff | mate'
-        ;;
-      *)
-        alias gd='git diff'
-        ;;
-    esac
-else
-    alias gd="git diff | $EDITOR"
-fi

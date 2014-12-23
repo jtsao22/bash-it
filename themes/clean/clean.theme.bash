@@ -13,12 +13,12 @@ function prompt_command() {
 
     if [ "$(whoami)" = root ]; then no_color=$red; else no_color=$white; fi
 
-    debian_chroot=$(cat /etc/debian_chroot 2> /dev/null)
-    if [ "zircon-dev" = "$debian_chroot" ]; then
-        PS1="\[($debian_chroot)\] ${no_color}\u${reset_color}:${blue}\w/${reset_color} \$(scm_prompt_info)$ "
-    else
-        PS1="$(separator)$(time_prompt)\n${no_color}\u${reset_color}:${blue}\w/${reset_color} \$(scm_prompt_info)$ "
+    #debian_chroot=$(cat /etc/debian_chroot 2> /dev/null)
+    # set variable identifying the chroot you work in (used in the prompt below)
+    if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+        debian_chroot=$(cat /etc/debian_chroot)
     fi
+    PS1="---------------------------------------------------------------------------------------------------------------- \D{%F %T}\n${debian_chroot:+($debian_chroot)}${no_color}\u${reset_color}:${green}\w/${reset_color} \$(scm_prompt_info)$ "
 
     RPROMPT='[\t]'
 
