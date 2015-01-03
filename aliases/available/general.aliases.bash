@@ -9,6 +9,9 @@ alias ll='ls -al'
 alias l='ls -a'
 alias l1='ls -1'
 
+# Alias python with p
+alias p="ipython"
+
 # Source bashrc
 alias ba="source ~/.bashrc"
 
@@ -19,7 +22,7 @@ then
   alias ls="ls --color=auto"
 fi
 which gshuf &> /dev/null
-if [ $? -eq 1 ]
+if [ $? -eq 0 ]
 then
   alias shuf=gshuf
 fi
@@ -85,3 +88,11 @@ function tarify()
     tar -zcvf $1.tar.gz $1
 }
 
+# Easy full path printer
+alias ep="readlink -f $1"
+
+# Use temp directory
+alias tmp="cd `mktemp -d`"
+
+# Make temporary bash script
+alias tb="touch test.sh; chmod +x test.sh; vi test.sh"
