@@ -55,12 +55,6 @@ fi
 alias	md='mkdir -p'
 alias	rd='rmdir'
 
-# Open programs like the mac
-alias open="xdg-open"
-
-# Always grep recursively all files 
-alias grep='grep -r'
-
 # ack = ack-grep 
 alias ack='ack-grep'
 
