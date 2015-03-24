@@ -102,3 +102,5 @@ alias tmp="cd `mktemp -d`"
 
 # Make temporary bash script
 alias tb="touch test.sh; chmod +x test.sh; vi test.sh"
+
+alias sb="source ~/.bashrc"
