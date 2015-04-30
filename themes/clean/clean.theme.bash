@@ -18,7 +18,7 @@ function prompt_command() {
     if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
         debian_chroot=$(cat /etc/debian_chroot)
     fi
-    PS1="---------------------------------------------------------------------------------------------------------------- \D{%F %T}\n${debian_chroot:+($debian_chroot)}${no_color}\u${reset_color}:${green}\w/${reset_color} \$(scm_prompt_info)$ "
+    PS1="----------------------------------------------------------------------------------------------------------------\D{%F%T}\n${debian_chroot:+($debian_chroot)}${no_color}\u${reset_color}:${green}\w/${reset_color} $(scm_prompt_info)$ "
 
     RPROMPT='[\t]'
 
