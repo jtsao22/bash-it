@@ -16,7 +16,7 @@ alias gup='git fetch && git rebase'
 alias gps='git push'
 alias gpo='git push origin'
 alias gdv='git diff -w "$@" | vim -R -'
-alias gc='git commit -m'
+alias gc='git commit'
 alias gca='git commit -v -a'
 alias gcm='git commit -v -m'
 alias gci='git commit --interactive'
@@ -40,6 +40,7 @@ alias gta="git tag -a"
 alias gtd="git tag -d"
 alias gtl="git tag -l"
 alias gd='git diff'
+alias gr='git remote'
 
 case $OSTYPE in
   darwin*)
