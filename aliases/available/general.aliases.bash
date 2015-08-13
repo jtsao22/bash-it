@@ -58,9 +58,6 @@ fi
 alias	md='mkdir -p'
 alias	rd='rmdir'
 
-# ack = ack-grep 
-alias ack='ack-grep'
-
 # Cd and ls at the same time
 function cs() {
     cd "$1"
