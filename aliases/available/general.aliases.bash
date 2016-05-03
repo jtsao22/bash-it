@@ -95,3 +95,6 @@ alias tmp="cd `mktemp -d`"
 alias tb="touch test.sh; chmod +x test.sh; vi test.sh"
 
 alias sb="source ~/.bashrc"
+
+# cd up fast
+alias cdu="cd ../../.."
