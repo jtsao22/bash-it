@@ -55,14 +55,20 @@ then
 fi
 
 # Directory
-alias	md='mkdir -p'
-alias	rd='rmdir'
+alias md='mkdir -p'
+alias rd='rmdir'
 
 # Cd and ls at the same time
 function cs() {
     cd "$1"
     ls
 }
+# Add cd's autocompletion to cs command
+if shopt -q cdable_vars; then
+    complete -v -F _cd -o nospace cs
+else
+    complete -F _cd -o nospace cs
+fi
 
 # Better cp that includes pv for showing progress bar
 function pvcp()
@@ -96,5 +102,49 @@ alias tb="touch test.sh; chmod +x test.sh; vi test.sh"
 
 alias sb="source ~/.bashrc"
 
-# cd up fast
-alias cdu="cd ../../.."
+function f()
+{
+    find . -name "$1" -print
+}
+
+# cd up to given folder or up three times
+function cdu() {
+    local EXPRESSION="$1"
+    if [ -z "$EXPRESSION" ]; then
+        cd ../../..
+        return 0
+    fi
+    if [ "$EXPRESSION" = "/" ]; then
+        cd "/"
+        return 0
+    fi
+    local CURRENT_FOLDER="$(pwd)"
+    local MATCHED_DIR=""
+    local MATCHING=true
+
+    while [ "$MATCHING" = true ]; do
+        if [[ "$CURRENT_FOLDER" =~ "$EXPRESSION" ]]; then
+            MATCHED_DIR="$CURRENT_FOLDER"
+            CURRENT_FOLDER=$(dirname "$CURRENT_FOLDER")
+        else
+            MATCHING=false
+        fi
+    done
+    if [ -n "$MATCHED_DIR" ]; then
+        cd "$MATCHED_DIR"
+        return 0
+    else
+        echo "No Match." >&2
+        return 1
+    fi
+}
+
+# complete cdu
+_cdu () {
+    # necessary locals for _init_completion
+    local cur prev words cword
+    _init_completion || return
+
+    COMPREPLY+=( $( compgen -W "$( echo ${PWD//\// } )" -- $cur ) )
+}
+complete -F _cdu cdu
