@@ -3,11 +3,10 @@ about-alias 'general aliases'
 
 # List directory contents
 alias sl=ls
-alias ls='ls -G'        # Compact view, show colors
+alias ls='ls --color=auto'        # Compact view, show colors
 alias la='ls -AF'       # Compact view, show hidden
 alias ll='ls -al'
 alias l='ls -a'
-alias l1='ls -1'
 
 # Alias python with p
 alias p="ipython"
@@ -64,6 +63,10 @@ function cs() {
     ls
 }
 # Add cd's autocompletion to cs command
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+    source /usr/share/bash-completion/bash_completion
+fi
+
 if shopt -q cdable_vars; then
     complete -v -F _cd -o nospace cs
 else
@@ -97,10 +100,18 @@ alias ep="readlink -f $1"
 # Use temp directory
 alias tmp="cd `mktemp -d`"
 
+# Alias for quick open/sourcing of bash session
+alias bs='vi ~/.bash_session'
+alias sbs='source ~/.bash_session'
+
+# Alias for quick open of i3 config
+alias i3c="vi ~/.i3/config"
+
 # Make temporary bash script
 alias tb="touch test.sh; chmod +x test.sh; vi test.sh"
 
 alias sb="source ~/.bashrc"
+alias ob="vi ~/.bashrc"
 
 function f()
 {

@@ -55,3 +55,20 @@ case $OSTYPE in
     alias gtls='git tag -l | sort -V'
     ;;
 esac
+
+# Add autocompletion
+# Use bash completion                                                                   
+if [ -f /usr/share/bash-completion/completions/git ]; then                              
+	source /usr/share/bash-completion/completions/git                                   
+
+	# Git autocompletion for aliases                                                    
+	__git_complete grm _git_rm                                                          
+	__git_complete ga _git_add                                                          
+	__git_complete gc _git_commit                                                       
+	__git_complete gco _git_checkout                                                    
+	__git_complete gpl _git_pull                                                        
+	__git_complete gps _git_push                                                        
+	__git_complete gd _git_diff                                                         
+	__git_complete gl _git_log                                                          
+	__git_complete gb _git_branch                                                       
+fi
