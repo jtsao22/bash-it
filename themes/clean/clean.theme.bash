@@ -30,7 +30,7 @@ function prompt_command() {
         debian_chroot=$(cat /etc/debian_chroot)
     fi
     timer_stop
-    PS1="----------------------------------------------------------------------------------------------------------------\D{%F %T}, ${timer_show}s\n${debian_chroot:+($debian_chroot)}${no_color}\u${reset_color}:${green}\w/${reset_color} $(scm_prompt_info)$ "
+    PS1="----------------------------------------------------------------------------------------------------------------\D{%F %T}, ${timer_show}s\n${debian_chroot:+($debian_chroot)}${no_color}\u${reset_color}: ${green}\w/${reset_color} $(scm_prompt_info)$ "
 }
 
 PROMPT_COMMAND=prompt_command;
