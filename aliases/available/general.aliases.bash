@@ -107,6 +107,9 @@ alias sbs='source ~/.bash_session'
 # Alias for quick open of i3 config
 alias i3c="vi ~/.i3/config"
 
+# Alias for opening ubuntu_install.sh
+alias ubi="vi ~/src/dotfiles/ubuntu_install.sh"
+
 # Make temporary bash script
 alias tb="touch test.sh; chmod +x test.sh; vi test.sh"
 
