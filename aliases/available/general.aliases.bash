@@ -8,6 +8,9 @@ alias la='ls -AF'       # Compact view, show hidden
 alias ll='ls -al'
 alias l='ls -a'
 
+alias vi="nvim"
+alias vim="nvim"
+
 # Alias python with p
 alias p="ipython"
 
