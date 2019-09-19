@@ -46,6 +46,7 @@ alias gr='git remote'
 alias gnew="git log HEAD@{1}..HEAD@{0}"
 # Add uncommitted and unstaged changes to the last commit
 alias gcaa="git commit -a --amend -C HEAD"
+alias gfix="git diff --name-only | uniq | xargs nvim"
 
 case $OSTYPE in
   darwin*)
@@ -57,18 +58,18 @@ case $OSTYPE in
 esac
 
 # Add autocompletion
-# Use bash completion                                                                   
-if [ -f /usr/share/bash-completion/completions/git ]; then                              
-	source /usr/share/bash-completion/completions/git                                   
+# Use bash completion
+if [ -f /usr/share/bash-completion/completions/git ]; then
+	source /usr/share/bash-completion/completions/git
 
-	# Git autocompletion for aliases                                                    
-	__git_complete grm _git_rm                                                          
-	__git_complete ga _git_add                                                          
-	__git_complete gc _git_commit                                                       
-	__git_complete gco _git_checkout                                                    
-	__git_complete gpl _git_pull                                                        
-	__git_complete gps _git_push                                                        
-	__git_complete gd _git_diff                                                         
-	__git_complete gl _git_log                                                          
-	__git_complete gb _git_branch                                                       
+	# Git autocompletion for aliases
+	__git_complete grm _git_rm
+	__git_complete ga _git_add
+	__git_complete gc _git_commit
+	__git_complete gco _git_checkout
+	__git_complete gpl _git_pull
+	__git_complete gps _git_push
+	__git_complete gd _git_diff
+	__git_complete gl _git_log
+	__git_complete gb _git_branch
 fi
