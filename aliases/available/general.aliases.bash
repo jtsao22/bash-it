@@ -36,7 +36,7 @@ alias cls='clear'
 alias edit="$EDITOR"
 alias pager="$PAGER"
 
-alias q='exit'
+alias open="xdg-open"
 
 # Pianobar can be found here: http://github.com/PromyLOPh/pianobar/
 
