@@ -168,3 +168,5 @@ complete -F _cdu cdu
 
 # If fzf is present, add v for quick vimming action
 [ -f ~/.fzf.bash ] && alias v='vi $(fzf)'
+
+alias rg="rg --smart-case"
