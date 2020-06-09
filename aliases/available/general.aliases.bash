@@ -119,6 +119,9 @@ alias tb="touch test.sh; chmod +x test.sh; vi test.sh"
 alias sb="source ~/.bashrc"
 alias ob="vi ~/.bashrc"
 
+# Vimrc
+alias vimrc="vi ~/.config/nvim/init.vim"
+
 function f()
 {
     find . -name "$1" -print
