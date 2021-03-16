@@ -170,6 +170,6 @@ _cdu () {
 complete -F _cdu cdu
 
 # If fzf is present, add v for quick vimming action
-[ -f ~/.fzf.bash ] && alias v='vi $(fzf)'
+[ -f ~/.fzf.bash ] && alias v='vi $(fzf --preview "bat --style=numbers --color=always --line-range :500 {}")'
 
 alias rg="rg --smart-case"
