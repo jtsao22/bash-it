@@ -3,8 +3,8 @@ about-alias 'general aliases'
 
 # List directory contents
 alias sl=ls
-alias ls='ls --color=auto'        # Compact view, show colors
-alias la='ls -AF'       # Compact view, show hidden
+alias ls='exa'
+alias la='exa -AF'       # Compact view, show hidden
 alias ll='ls -al'
 alias l='ls -a'
 
@@ -170,6 +170,6 @@ _cdu () {
 complete -F _cdu cdu
 
 # If fzf is present, add v for quick vimming action
-[ -f ~/.fzf.bash ] && alias v='vi $(fzf --preview "bat --style=numbers --color=always --line-range :500 {}")'
+alias v='vi $(fzf --preview "bat --style=numbers --color=always --line-range :500 {}")'
 
 alias rg="rg --smart-case"
