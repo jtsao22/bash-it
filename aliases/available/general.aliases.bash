@@ -19,10 +19,6 @@ alias ba="source ~/.bashrc"
 
 alias _="sudo"
 
-if [ $(uname) = "Linux" ]
-then
-  alias ls="ls --color=auto"
-fi
 which gshuf &> /dev/null
 if [ $? -eq 0 ]
 then
@@ -108,7 +104,7 @@ alias bs='vi ~/.bash_session'
 alias sbs='source ~/.bash_session'
 
 # Alias for quick open of i3 config
-alias i3c="vi ~/.i3/config"
+alias i3c="vi ~/.config/regolith/i3/config"
 
 # Alias for opening ubuntu_install.sh
 alias ubi="vi ~/src/dotfiles/ubuntu_install.sh"
