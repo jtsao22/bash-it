@@ -166,6 +166,6 @@ _cdu () {
 complete -F _cdu cdu
 
 # If fzf is present, add v for quick vimming action
-alias v='vi $(fzf --preview "bat --style=numbers --color=always --line-range :500 {}")'
+alias v="fzf --multi --bind 'enter:become(vim {+})'"
 
 alias rg="rg --smart-case"
